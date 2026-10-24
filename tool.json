@@ -1,0 +1,17 @@
+{
+  "id": "c06",
+  "slug": "offline-subtitle",
+  "name": "离线视频转字幕",
+  "version": "0.1.0",
+  "repo": "campfire-code/offline-subtitle",
+  "license": "MIT",
+  "ui": {
+    "layout": "b",
+    "palette": "amber"
+  },
+  "upstream": {
+    "repo": "huggingface/transformers.js",
+    "license": "Apache-2.0"
+  },
+  "ffmpeg": true
+}
