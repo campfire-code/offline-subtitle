@@ -27,7 +27,7 @@ export function parseWav(bytes: Uint8Array): { samples: Float32Array; sampleRate
       sampleRate = dv.getUint32(body + 4, true);
       bits = dv.getUint16(body + 14, true);
     } else if (id === 'data') {
-      if (sampleRate !== SAMPLE_RATE || channels !== 1 || bits !== 16) throw new Error(`音频格式不对（${sampleRate}Hz、${channels} 声道、${bits} 位），应为 16000Hz 单声道 16 位`);
+      if (sampleRate !== SAMPLE_RATE || channels !== 1 || bits !== 16) throw new Error(`音频格式不对（${sampleRate} 赫兹、${channels} 声道、${bits} 位），应为 16000 赫兹单声道 16 位`);
       if (size === 0 || body + size > bytes.length) size = bytes.length - body;
       const n = Math.floor(size / 2);
       const samples = new Float32Array(n);

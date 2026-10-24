@@ -80,7 +80,7 @@ describe('音频', () => {
     expect(parseWav(wavBytes(Int16Array.from([1, 2, 3]), { dataSize: 0 })).samples).toHaveLength(3);
   });
   it('格式不对 / 不是 WAV 时给出明确错误', () => {
-    expect(() => parseWav(wavBytes(new Int16Array(4), { rate: 44100 }))).toThrow('16000Hz');
+    expect(() => parseWav(wavBytes(new Int16Array(4), { rate: 44100 }))).toThrow('16000 赫兹');
     expect(() => parseWav(wavBytes(new Int16Array(4), { ch: 2 }))).toThrow('单声道');
     expect(() => parseWav(new Uint8Array(100))).toThrow('不是有效的 WAV');
   });
